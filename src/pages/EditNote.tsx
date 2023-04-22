@@ -2,7 +2,8 @@ import { useState, FormEvent } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
 import { RiDeleteBin6Line } from 'react-icons/ri';
-import { AddNotes, Note, NotesJson } from '../types';
+import { FaCheck } from 'react-icons/fa';
+import { AddNotes, NotesJson } from '../types';
 import { useCreateDate } from '../hooks';
 
 interface Props {
@@ -29,7 +30,7 @@ export const EditNote = (
     // Change date:
     const date = useCreateDate();
 
-    const handleForm = (e:FormEvent<HTMLInputElement>) => {
+    const handleForm = (e:FormEvent) => {
         e.preventDefault();
 
         if (title && details) {
@@ -51,18 +52,25 @@ export const EditNote = (
     }
 
     const handleDelete = () => {
-        const newNotes = jsonNotes.filter(item => item.id != idN);
 
-        setJsonNotes(newNotes);
-        navigate('/');
+        if (window.confirm('Are you sure yoy want to delete?')) {
+            const newNotes = jsonNotes.filter(item => item.id != idN);
+
+            setJsonNotes(newNotes);
+            navigate('/');
+        }
+        
     }
 
     return (
-        <section>
+        <section className='edit-create-page'>
             <header className='create-note__header'>
                 <Link to='/' className='btn'><IoIosArrowBack /></Link>
-                <button className='btn lg primary' onClick={handleForm}>Save</button>
-                <button className='btn danger' onClick={handleDelete}><RiDeleteBin6Line /></button>
+                <h1 className='title-create-edit'>Edit</h1>
+                <div className='container-btns'>
+                    <button className='btn primary' onClick={handleForm}><FaCheck/></button>
+                    <button className='btn danger' onClick={handleDelete}><RiDeleteBin6Line /></button>
+                </div>
             </header>
 
             <form className='create-note__form' onSubmit={handleForm}>

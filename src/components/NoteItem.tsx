@@ -9,7 +9,7 @@ export const NoteItem = (
 
     return (
         <Link to={`/edit-note/${note.id}`} className='note'>
-            <h4>{note.title.length > 80 ? (note.title.substring(0, 50)) + '...' : note.title}</h4>
+            <h2>{note.title.length > 80 ? (note.title.substring(0, 50)) + '...' : note.title}</h2>
             <p>{note.date}</p>
         </Link>
     )

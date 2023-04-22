@@ -1,0 +1,43 @@
+#app {
+    width: 100vw;
+    height: 100vh;
+    padding: 2rem 1rem;
+    overflow-y: scroll;
+    position: relative;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* ---------------- BUTTONS ---------------- */
+.btn.add__btn {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    bottom: 6%;
+    right: 5rem;
+}
+
+/* ---------------- NOTES PAGE ---------------- */
+.app-notes-container {
+    width: auto;
+    padding: 0 10rem;
+}
+
+.notes__header {
+    width: 100%;
+    padding: 2rem 11rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.notes__container {
+    margin-top: 6rem;
+    gap: 1rem;
+}
+
+/* ----------- CREATE NOTE & EDIT NOTE PAGE ---------- */
+.edit-create-page {
+    padding: 0 15rem;
+}

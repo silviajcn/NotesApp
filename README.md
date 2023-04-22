@@ -1,6 +1,6 @@
 # 🌎 Notes App
 
-<img width="25%" align="right" style="margin:5%" alt="logo" src="https://res.cloudinary.com/silviajcn/image/upload/v1680658548/PRACTICAS/Varios/notesapp_t2ptft.png" />
+<img width="15%" align="right" style="margin:5%" alt="logo" src="https://res.cloudinary.com/silviajcn/image/upload/v1680658548/PRACTICAS/Varios/notesapp_t2ptft.png" />
 
 Notes App is a universal app that allows you to write and leave notes, edit and delete them!
 
@@ -9,6 +9,13 @@ Note: All the notes you enter will be saved in the local storage of your device.
 I did this practice following the steps given by Ernest Achiever in his Youtube tutorial [React Notes App Tutorial](https://www.youtube.com/watch?v=_3ooazcK4TI&t=4858s). This is the result of his tutorial:
 
 ![Notes App by Ernest Achiever](https://res.cloudinary.com/silviajcn/image/upload/v1680658997/PRACTICAS/Varios/thumbnail_oamnyk.jpg)
+
+## 📃 In the application you can:
+
+- Create notes ✅
+- Edit the notes that have been created ✅
+- Delete existing notes ✅
+- Search for a specific note ✅
 
 ## ⚙️ Changes made:
 
@@ -42,7 +49,7 @@ I did this practice following the steps given by Ernest Achiever in his Youtube 
 ## ⚙️ Installation
 
 * Clone the latest code on the master branch
-    * ```git clone ```
+    * ```git clone https://github.com/silviajcn/NotesApp.git```
 * Install dependencies
     * ```npm install```
 * Run the web server!
@@ -56,11 +63,11 @@ I did this practice following the steps given by Ernest Achiever in his Youtube 
 
 ### Desktop:
 
-![]()
+![Notes Desktop](https://res.cloudinary.com/silviajcn/image/upload/v1682131892/PRACTICAS/Varios/notes-desktop_y6p0ve.png)
 
 ### Mobile:
 
-![]()
+![Notes mobile](https://res.cloudinary.com/silviajcn/image/upload/v1682131891/PRACTICAS/Varios/notes-mobile_cckg2r.png)
 
 ## 😎 Author
 

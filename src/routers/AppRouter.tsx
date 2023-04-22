@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { CreateNote, EditNote, Notes } from '../pages';
 import { NotesJson } from '../types';
+import { Footer } from '../components';
 
 const AppRouter = () => {
 
@@ -27,6 +28,7 @@ const AppRouter = () => {
 
                 <Route path='*' element={<Navigate to='/' />} />
             </Routes>
+            <Footer />
         </main>
     )
 };
