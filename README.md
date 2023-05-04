@@ -23,7 +23,7 @@ I did this practice following the steps given by Ernest Achiever in his Youtube 
 - I decided to make the application fully responsive, because in the tutorial the app would only look good on mobile but on desktop it would not take advantage of all the space on the screen.
 
 ## 🖱️ Visit the app here: 
-
+https://notes-app-silvi.netlify.app/
 
 
 ## 📁 Project:
