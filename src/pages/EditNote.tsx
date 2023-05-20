@@ -1,5 +1,5 @@
-import { useState, FormEvent } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useState, FormEvent, Dispatch, SetStateAction } from 'react';
+import { Link, NavigateFunction, Params, useNavigate, useParams } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { FaCheck } from 'react-icons/fa';
@@ -8,7 +8,7 @@ import { useCreateDate } from '../hooks';
 
 interface Props {
     jsonNotes: NotesJson[];
-    setJsonNotes: AddNotes;
+    setJsonNotes: Dispatch<SetStateAction<NotesJson[]>>;
 }
 
 export const EditNote = (
@@ -17,26 +17,31 @@ export const EditNote = (
 
     //console.log(setJsonNotes);
     
-    const navigate = useNavigate();
-    const { id } = useParams();
-    let idN = parseInt(id);
-    //console.log(typeof idN)
+    const navigate: NavigateFunction = useNavigate();
+    const { id } = useParams<Params<string>>();
+    let idN: number = parseInt(id);
+    // console.log(typeof idN)
     //console.log(idN)
 
     const note: NotesJson | undefined = jsonNotes.find((item) => item.id === idN);
-    const [title, setTitle] = useState(note?.title);
-    const [details, setDetails] = useState(note?.details);
+    const [title, setTitle] = useState<string | undefined>(note?.title);
+    const [details, setDetails] = useState<string | undefined>(note?.details);
 
     // Change date:
-    const date = useCreateDate();
+    const date: string = useCreateDate();
 
-    const handleForm = (e:FormEvent) => {
+    const handleForm = (e:FormEvent): void | NotesJson[] => {
         e.preventDefault();
 
         if (title && details) {
-            const newNote = { ...note, title, details, date }
+            const newNote: {
+                    title: string;
+                    details: string;
+                    date: string;
+                    id?: number | undefined;
+                } = { ...note, title, details, date }
 
-            const newNotes = jsonNotes.map(item => {
+            const newNotes: NotesJson[] = jsonNotes.map(item => {
                 if (item.id === idN) {
                     item = newNote;
                 }
@@ -51,10 +56,10 @@ export const EditNote = (
 
     }
 
-    const handleDelete = () => {
+    const handleDelete = (): void => {
 
         if (window.confirm('Are you sure yoy want to delete?')) {
-            const newNotes = jsonNotes.filter(item => item.id != idN);
+            const newNotes: NotesJson[] = jsonNotes.filter(item => item.id != idN);
 
             setJsonNotes(newNotes);
             navigate('/');

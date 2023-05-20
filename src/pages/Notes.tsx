@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NoteItem } from '../components';
-import { Note } from '../types';
+import { Note, NotesJson } from '../types';
 import { CiSearch } from 'react-icons/ci';
 import { MdClose } from 'react-icons/md';
 import { BsPlusLg } from 'react-icons/bs';
@@ -10,9 +10,9 @@ export const Notes = ({ jsonNotes }: Note) => {
     
     const [showSearch, setShowSearch] = useState<boolean>(false);
     const [text, setText] = useState<string>('');
-    const [filteredNotes, setFilteredNotes] = useState(jsonNotes);
+    const [filteredNotes, setFilteredNotes] = useState<NotesJson[]>(jsonNotes);
 
-    const handleSearch = () => {
+    const handleSearch = (): void | NotesJson[] => {
         setFilteredNotes(jsonNotes.filter(note => {
             if (note.title.toLowerCase().match(text.toLocaleLowerCase())) {
                 return note;

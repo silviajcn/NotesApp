@@ -1,7 +1,7 @@
 
 
-export const useCreateDate = () => {
-    const currentDate = new Date();
+export const useCreateDate = (): string => {
+    const currentDate: Date = new Date();
 
     // Hours:
     let hrs: number = currentDate.getHours();
@@ -15,7 +15,7 @@ export const useCreateDate = () => {
 
     // const date = `${currentDate.getDate()}/${currentDate.getMonth() + 1}/${currentDate.getFullYear()}, [${currentDate.getHours().toLocaleString()}:${currentDate.getMinutes()}]`;
 
-    const date = `${currentDate.getDate()}/${currentDate.getMonth() + 1}/${currentDate.getFullYear()}, ${hrs}:${min} ${amPm}`;
+    const date: string = `${currentDate.getDate()}/${currentDate.getMonth() + 1}/${currentDate.getFullYear()}, ${hrs}:${min} ${amPm}`;
     
     return date;
 };

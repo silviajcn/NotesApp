@@ -23,6 +23,6 @@ export interface NoteDetails {
 //     setJsonNotes: Dispatch<SetStateAction<NotesJson[]>>;
 // }
 
-export interface AddNotes {
+export type AddNotes = {
     setJsonNotes: React.Dispatch<React.SetStateAction<NotesJson[]>>;
 }

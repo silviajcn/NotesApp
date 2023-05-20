@@ -6,8 +6,8 @@ import { Footer } from '../components';
 
 const AppRouter = () => {
 
-    const item = localStorage.getItem('notes');
-    const result = item ? JSON.parse(item) : [];
+    const item: string | null = localStorage.getItem('notes');
+    const result: NotesJson[] | [] = item ? JSON.parse(item) : [];
 
     const [jsonNotes, setJsonNotes] = useState<NotesJson[]>(result);
     //console.log({ setJsonNotes });

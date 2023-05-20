@@ -3,9 +3,9 @@ import { FaAngleUp } from 'react-icons/fa';
 
 export const Footer = () => {
 
-    const [isVisible, setIsVisible] = useState(false);
+    const [isVisible, setIsVisible] = useState<boolean>(false);
 
-    const toggleVisibility = () => {
+    const toggleVisibility = (): void => {
         if (window.pageYOffset > 100) {
             setIsVisible(true);
         } else {
@@ -13,7 +13,7 @@ export const Footer = () => {
         }
     }
 
-    const scrollToTop = () => {
+    const scrollToTop = (): void => {
         window.scrollTo({
             top: 0,
             behavior: "smooth",
